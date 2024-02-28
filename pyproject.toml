@@ -12,7 +12,7 @@ django = "^5.0.2"
 django-unfold = "^0.20.3"
 pillow = "^10.2.0"
 django-tinymce = "^3.7.1"
-python-telegram-bot = "^20.8"
+psycopg2 = "^2.9.9"
 
 
 [build-system]

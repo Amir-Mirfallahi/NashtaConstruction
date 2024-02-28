@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t%68se&j*gb3_70x$zgi2b_w3aca&(jwz#wr6gah_u6lz6=!n='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nashtaconstruction.pythonanywhere.com']
 
 # Application definition
 
@@ -34,9 +34,6 @@ INSTALLED_APPS = [
     "unfold",  # before django.contrib.admin
     "unfold.contrib.filters",  # optional, if special filters are needed
     "unfold.contrib.forms",  # optional, if special form elements are needed
-    "unfold.contrib.import_export",  # optional, if django-import-export package is used
-    "unfold.contrib.guardian",  # optional, if django-guardian package is used
-    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     "django.contrib.admin",  # required
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,14 +83,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'production': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nashta_construction',
-        'USER': 'admin',
-        'PASSWORD': '<PASSWORD>',
-        "HOST": "localhost",
-        "PORT": 3306,
-    }
 }
 
 # Password validation

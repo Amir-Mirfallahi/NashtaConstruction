@@ -1,15 +1,8 @@
-anyio
 asgiref
-certifi
 Django
 django-tinymce
 django-unfold
-h11
-httpcore
-httpx
-idna
 pillow
-python-telegram-bot
-sniffio
+psycopg2
 sqlparse
 tzdata
