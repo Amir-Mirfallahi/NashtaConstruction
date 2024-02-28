@@ -1,0 +1,33 @@
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+        <a class="nav-link" href="/">
+            Home
+        </a>
+    </li>
+    <li class="nav-item">
+        <a
+                class="nav-link"
+                href="{% url 'home:about_us' %}"
+        >About</a
+        >
+    </li>
+    <li class="nav-item">
+        <a
+                class="nav-link"
+                href="{% url 'home:our_services' %}"
+        >Services
+        </a>
+    </li>
+    <li class="nav-item">
+        <a
+                class="nav-link"
+                href="{% url 'home:contact_us' %}"
+        >Contact</a
+        >
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog:list' %}"
+        >Blog</a
+        >
+    </li>
+</ul>

@@ -1,0 +1,53 @@
+<section class="banner_main">{% load static %}
+    <div id="banner1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container-fluid">
+                    <div class="carousel-caption">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-bg">
+                                    <span>Nashta Construction </span>
+                                    <h1>company</h1>
+                                    <p>
+                                        Welcome to NashtaConstruction,
+                                        where innovation meets
+                                        craftsmanship and dreams take
+                                        shape. With a dedication to
+                                        excellence and a commitment to
+                                        quality, we transform concepts
+                                        into concrete realities. Our
+                                        team of experienced
+                                        professionals collaborates
+                                        seamlessly to deliver projects
+                                        that exceed expectations, guided
+                                        by clear communication,
+                                        transparency, and integrity.
+                                        From residential to commercial
+                                        ventures, NashtaConstruction is
+                                        your trusted partner in building
+                                        the future. Welcome to a world
+                                        where every structure tells a
+                                        story – welcome to
+                                        NashtaConstruction.
+                                    </p>
+                                    <a href="{% url 'home:contact_us' %}">Contact us</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text_img">
+                                    <figure>
+                                        <img
+                                                src="{% static 'images/car.png' %}"
+                                                alt="#"
+                                        />
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

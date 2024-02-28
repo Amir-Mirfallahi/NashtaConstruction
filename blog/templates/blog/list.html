@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex flex-column">
+        <h4 class="mb-2 font-weight-bold">Trending Topics</h4>
+        <div class="ml-3">
+            {% for topic in top_topics %}
+                {# TODO: Topic href should be done #}
+                <a href="?topic={{ topic.name }}" class="btn-topics">{{ topic.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% for post in page_obj %}
+        <div class="row blog-post mt-5 p-3">
+            <div class="col-sm-7 col-lg-8">
+                <h4 class="mb-2">{{ post.get_date }}</h4>
+                <h1 class="font-weight-bold">{{ post.title }}</h1>
+                <p>{{ post.content|truncatewords:20|safe }}</p>
+                <a href="{% url 'blog:detail' post.slug %}" class="mt-2 btn btn-read-more">Read more <i
+                        class=" ml-2 fa fa-arrow-right"></i></a>
+                <div class="post-footer mt-4">
+                    <a href="#" class="btn-topics ">{{ post.topic }}</a>
+                    <span class="text-dark">by {{ post.author.get_full_name }}<i
+                            class="fa fa-clock-o mr-1 ml-3"></i> {{ post.time_to_read }} min to read</span>
+                </div>
+            </div>
+            <div class="col-sm-5 col-lg-4">
+                <img src="{{ post.image.url }}" alt="blog-demo" class="rounded">
+            </div>
+        </div>
+    {% endfor %}
+    {% if is_paginated %}
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
+            {% endif %}
+            {% for i in paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="active page-item"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled page-item"><span class="page-link">&raquo;</span></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}

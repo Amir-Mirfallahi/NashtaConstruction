@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}{% load static %}
+
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    <div class="d-flex justify-content-end">
+        <div>
+            <i class="fa fa-pencil" style="color: #cb1d1d;"></i> by {{ object.author.get_full_name }}
+            <i class="fa fa-clock-o" style="color: #0d95e8;"></i> {{ object.time_to_read }} min to read
+            <i class="fa fa-heart" style="color: #cb1d1d;"></i> {{ object.views }} views
+        </div>
+    </div>
+    <img data-src="{{ object.image.url }}"
+         alt="{{ object.title }}"
+         class="lazy img-fluid rounded" src="">
+
+    {{ object.content|safe }}
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                });
+            }
+        });
+    </script>
+{% endblock %}

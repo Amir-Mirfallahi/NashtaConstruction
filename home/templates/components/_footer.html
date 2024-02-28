@@ -1,0 +1,60 @@
+{% load configuration_manage %}
+<footer>{% load static %}
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="location_icon">
+                        <li>
+                            <a href="#"
+                            ><i
+                                    class="fa fa-map-marker"
+                                    aria-hidden="true"
+                            ></i
+                            ></a>
+                            Address: {% get_config 'address' %}
+                        </li>
+                        <li>
+                            <a href="#"
+                            ><i
+                                    class="fa fa-volume-control-phone"
+                                    aria-hidden="true"
+                            ></i></a
+                            >Phone : {% get_config 'phone' %}
+                        </li>
+                        <li>
+                            <a href="#"
+                            ><i
+                                    class="fa fa-envelope"
+                                    aria-hidden="true"
+                            ></i></a
+                            >Email : {% get_config 'email' %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <div class="map">
+                        <figure>
+                            <img src="{% static 'images/map.jpg' %}" alt="#"/>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Copyright 2024 All Right Reserved By<a
+                                href="https://nashtaconstruction.com/"
+                        >
+                            Nashta Construction</a
+                        >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
