@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
     'blog',
     'tinymce',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +80,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
+        'ENGINE': "django.db.backends.mysql",
+        'NAME': "nashtaconstruction805_eloise",
+        'USER': "nashtaconstruction805_eloise",
+        'PASSWORD': "uvc9wmS6PQ9M",
+        'HOST': "services.fin1.chabokan.net",
+        'PORT':  58274,
+    }
 }
 
 # Password validation

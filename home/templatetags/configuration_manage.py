@@ -7,7 +7,7 @@ register = template.Library()
 
 @register.simple_tag
 def get_config(part):
-    config = Config.objects.first()
+    config = Config.objects.first() or None
     match part:
         case "address":
             return config.address

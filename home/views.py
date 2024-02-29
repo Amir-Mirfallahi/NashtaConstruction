@@ -22,9 +22,11 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
-    extra_context = {
-        "config": Config.objects.first(),
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        config = Config.objects.first()
+        context['config'] = config
+        return context
 
 
 class ContactPageView(TemplateView):
