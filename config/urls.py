@@ -8,5 +8,6 @@ urlpatterns = [
     path("tinymce/", include("tinymce.urls")),
     path('', include(('home.urls', 'home'), namespace='home')),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
+                                                                           document_root=settings.STATIC_ROOT)
 
