@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-t%68se&j*gb3_70x$zgi2b_w3aca&(jwz#wr6gah_u6lz6=!n=
 DEBUG = False
 
 ALLOWED_HOSTS = ['nashtaconstruction.chbk.run']
+CSRF_TRUSTED_ORIGINS = ['nashtaconstruction.chbk.run']
 
 # Application definition
 
