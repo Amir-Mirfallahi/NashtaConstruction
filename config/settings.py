@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t%68se&j*gb3_70x$zgi2b_w3aca&(jwz#wr6gah_u6lz6=!n='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['nashtaconstruction.chbk.run', "nashtaconstruction.onrender.com"]
-CSRF_TRUSTED_ORIGINS = ['https://nashtaconstruction.chbk.run/', "https://nashtaconstruction.onrender.com/"]
+# ALLOWED_HOSTS = ['nashtaconstruction.chbk.run', "nashtaconstruction.onrender.com"]
+# CSRF_TRUSTED_ORIGINS = ['https://nashtaconstruction.chbk.run/', "https://nashtaconstruction.onrender.com/"]
 
 # Application definition
 
@@ -125,6 +125,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+else:
+    STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'
