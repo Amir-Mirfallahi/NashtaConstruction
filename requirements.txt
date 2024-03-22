@@ -3,7 +3,7 @@ Django
 django-tinymce
 django-unfold
 pillow
-psycopg2
 sqlparse
 tzdata
 mysqlclient
+gunicorn
